@@ -19,7 +19,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 
-@RequestMapping("users")
+//@RequestMapping("users")
 @RestController
 public class UserController {
     private Logger logger = LoggerFactory.getLogger(UserController.class);
@@ -28,8 +28,9 @@ public class UserController {
     UserService userService;
 
 
-    @RequestMapping(value = "{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "user/{id}",method = RequestMethod.GET)
     public ResponseEntity getUserBYId(@PathVariable int id){
+        id = 1;
         User user = userService.getUserById(id);
         if(user==null) return ResponseEntity.notFound().build();
         return ResponseEntity.ok(user);
@@ -50,7 +51,7 @@ public class UserController {
     }
 
 
-    @RequestMapping(value = "",method =RequestMethod.GET )
+    @RequestMapping(value = "users",method =RequestMethod.GET )
     public ResponseEntity users(){
         List<User> users =userService.getUsers(null);
         return new ResponseEntity(users, HttpStatus.OK);
