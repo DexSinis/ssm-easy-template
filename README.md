@@ -267,3 +267,4 @@ SSM-Easy-Template集成了`gretty`插件,更多使用方法前往[gretty官网][
 [4]:http://www.chenkaihua.com
 [5]:https://github.com/akhikhl/gretty
 [6]:http://mybatis.github.io/generator/
+# ssm-easy-template

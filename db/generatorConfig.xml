@@ -52,6 +52,9 @@
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
 
         </table>
+        <table tableName="news"  >
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
 
+        </table>
     </context>
 </generatorConfiguration>
