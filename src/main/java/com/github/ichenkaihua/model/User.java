@@ -12,6 +12,9 @@ public class User {
 
     private String password;
 
+    @Column(name = "u_level")
+    private Integer uLevel;
+
     /**
      * @return id
      */
@@ -52,5 +55,19 @@ public class User {
      */
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    /**
+     * @return u_level
+     */
+    public Integer getuLevel() {
+        return uLevel;
+    }
+
+    /**
+     * @param uLevel
+     */
+    public void setuLevel(Integer uLevel) {
+        this.uLevel = uLevel;
     }
 }

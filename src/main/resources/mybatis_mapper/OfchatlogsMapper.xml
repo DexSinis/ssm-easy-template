@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.github.ichenkaihua.mapper.OfchatlogsMapper" >
+  <resultMap id="BaseResultMap" type="com.github.ichenkaihua.model.Ofchatlogs" >
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <result column="MESSAGEID" property="messageid" jdbcType="INTEGER" />
+    <result column="SESSIONJID" property="sessionjid" jdbcType="VARCHAR" />
+    <result column="SENDER" property="sender" jdbcType="VARCHAR" />
+    <result column="RECEIVER" property="receiver" jdbcType="VARCHAR" />
+    <result column="CREATEDATE" property="createdate" jdbcType="VARCHAR" />
+    <result column="LENGTH" property="length" jdbcType="INTEGER" />
+    <result column="STATE" property="state" jdbcType="INTEGER" />
+    <result column="CONTENT" property="content" jdbcType="LONGVARCHAR" />
+    <result column="DETAIL" property="detail" jdbcType="LONGVARCHAR" />
+  </resultMap>
+
+
+  <!-- select语句 -->
+  <select id="getOfchatlogssBySelf" parameterType="string" resultType="Ofchatlogs">
+    select myself.* from (select * from ofChatLogs chat where chat.RECEIVER = #{id} ORDER BY chat.CREATEDATE DESC) as
+    myself  GROUP BY myself.sender,myself.receiver
+  </select>
+
+</mapper>

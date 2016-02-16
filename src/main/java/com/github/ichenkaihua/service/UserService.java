@@ -43,7 +43,7 @@ public class UserService  {
 
 
 
-    public List<User> getUsers(User user){
+    public List<User> getUsers2(User user){
         if (user == null) {
             return userMapper.selectAll();
         }
@@ -51,13 +51,13 @@ public class UserService  {
         return userMapper.select(user);
     }
 
-    public List<User> getUsers1(User user){
+    public List<User> getUsers(User user){
 //        if (user == null) {
 //            return userMapper.selectAll();
 //        }
         System.out.println("--------------------开始查找全部users---------------------");
         List<User> list =  new ArrayList<User>();
-        User user1 = userMapper.selectUserByID(1);
+        User user1 = userMapper.selectUserByID(2);
         System.out.println(user1+"------------------------user----------------");
         System.out.println(list +"------------------------list----------------");
         list.add(user1);

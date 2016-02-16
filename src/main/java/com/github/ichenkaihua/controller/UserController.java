@@ -36,6 +36,8 @@ public class UserController {
         return ResponseEntity.ok(user);
     }
 
+
+
     @RequestMapping(value = "",method = RequestMethod.POST)
     public ResponseEntity addUser(@RequestBody User user)  {
 

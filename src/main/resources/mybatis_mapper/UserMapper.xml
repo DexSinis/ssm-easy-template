@@ -6,8 +6,9 @@
       WARNING - @mbggenerated
     -->
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="name" jdbcType="CHAR" property="name" />
-    <result column="password" jdbcType="CHAR" property="password" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="u_level" jdbcType="INTEGER" property="uLevel" />
   </resultMap>
 
 
@@ -37,13 +38,12 @@
 
   <!--执行增加操作的SQL语句。id和parameterType分别与IUserOperation接口中的addUser方法的名字和参数类型一致。
   useGeneratedKeys设置为"true"表明要MyBatis获取由数据库自动生成的主键；keyProperty="id"指定把获取到的主键值注入到User的id属性-->
-  <insert id="addUser" parameterType="User"
-          useGeneratedKeys="true" keyProperty="id">
+  <insert id="addUser" keyProperty="id" parameterType="User" useGeneratedKeys="true">
     insert into user(name,password)
     values(#{name},#{password})
   </insert>
 
-  <update id="updateUser" parameterType="User" >
+  <update id="updateUser" parameterType="User">
     update user set name=#{name},password=#{password} where id=#{id}
   </update>
 

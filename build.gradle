@@ -51,6 +51,9 @@ buildscript {
 gretty {
     port = 8080
     contextPath = "/"
+
+    debugPort = 5005      // default
+    debugSuspend = true   // default
 }
 
 

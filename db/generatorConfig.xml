@@ -52,13 +52,18 @@
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
 
         </table>
-        <table tableName="news"  >
+        <table tableName="t_news"  >
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
 
         </table>
 
         <table tableName="t_account"  >
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+
+        </table>
+
+        <table tableName="ofChatLogs"  >
+            <generatedKey column="MESSAGEID" sqlStatement="Mysql" identity="true"/>
 
         </table>
     </context>
