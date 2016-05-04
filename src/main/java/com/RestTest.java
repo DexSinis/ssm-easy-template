@@ -41,6 +41,7 @@ public class RestTest {
 			String result=InstantiationRestAPI(json).findAccoutInfo(accountSid, authToken);
 			System.out.println("Response content is: " + result);
 		} catch (Exception e) {
+			System.out.println("Exception content is: " + e);
 			// TODO: handle exception
 		}
 	}
@@ -168,8 +169,8 @@ public class RestTest {
 			json=false;
 		}
 		if (method.equals("1")) {
-			String accountSid="";
-			String token="";
+			String accountSid="603edaecfd04e9382a8f9fe6ca637429";
+			String token="145e5298b7e59a192153870d1185ac6e";
 			testFindAccount(json,accountSid,token);
 		}else if (method.equals("2")) {
 			testCreateClient(json, params[2],params[3], params[4], params[5], params[6], params[7], params[8]);

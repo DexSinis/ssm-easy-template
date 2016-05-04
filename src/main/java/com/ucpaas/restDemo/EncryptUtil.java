@@ -13,8 +13,9 @@
 package com.ucpaas.restDemo;
 
 import java.security.MessageDigest;
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
+
+import org.apache.commons.codec.binary.Base64;
+
 
 public class EncryptUtil {  
 
@@ -39,9 +40,9 @@ public class EncryptUtil {
      * @return 
      * @throws Exception 
      */  
-    public String base64Encoder(String src) throws Exception {
-        BASE64Encoder encoder = new BASE64Encoder();
-        return encoder.encode(src.getBytes(UTF8));
+    public String base64Encoder(String src) throws Exception {  
+//        BASE64Encoder encoder = new BASE64Encoder();
+        return Base64.encodeBase64String(src.getBytes(UTF8));
     }  
       
     /** 
@@ -51,8 +52,8 @@ public class EncryptUtil {
      * @throws Exception 
      */  
     public String base64Decoder(String dest) throws Exception {  
-        BASE64Decoder decoder = new BASE64Decoder();
-        return new String(decoder.decodeBuffer(dest), UTF8);
+//        BASE64Decoder decoder = new BASE64Decoder();
+        return new String(Base64.decodeBase64(dest), UTF8);
     }  
       
     /** 

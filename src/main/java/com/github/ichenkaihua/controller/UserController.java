@@ -19,7 +19,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 
-//@RequestMapping("users")
+@RequestMapping("users")
 @RestController
 public class UserController {
     private Logger logger = LoggerFactory.getLogger(UserController.class);

@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-//@RequestMapping("tNewss")
+@RequestMapping("tNewss")
 @RestController
 public class TNewsAccountController {
     private Logger logger = LoggerFactory.getLogger(TNewsAccountController.class);
